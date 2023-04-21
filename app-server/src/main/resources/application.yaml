@@ -1,0 +1,26 @@
+server:
+  port: 18080
+
+spring:
+  application:
+    name: app-server
+  redis:
+    port: 6379
+    host: 192.168.1.188
+    password: 525150
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.188:8848
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  consumer:
+    check: false
+
+chat:
+  sms:
+    signName: 物流云商
+    templateCode: SMS_106590012
+    accessKey: LTAI4GKgob9vZ53k2SZdyAC7
+    secret: LHLBvXmILRoyw0niRSBuXBZewQ30la

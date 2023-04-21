@@ -1,0 +1,27 @@
+server:
+  port: 18081
+spring:
+  application:
+    name: chat-db
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.188:3306/chat?serverTimezone=UTC&userUnicode=true&useSSL=false
+    password: root
+    username: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.188:8848
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20881
+  registry:
+    address: spring-cloud://localhost
+  scan:
+    base-packages: com.chat.db.api.impl
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
